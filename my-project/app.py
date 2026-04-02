@@ -4,7 +4,7 @@ import os
 import subprocess
 
 app = Flask(__name__)
-CORS(CORS) # React eriþimi için
+CORS(CORS) # React eriÃ¾imi iÃ§in
 
 ARCHIVE_DIR = "./projects_archive"
 
@@ -15,17 +15,17 @@ def home():
 @app.route('/api/execute', methods=['POST'])
 def execute_script():
     data = request.json
-    script_name = data.get('script_name') # Çalýþtýrýlacak dosya adý
+    script_name = data.get('script_name') # Ã‡alÃ½Ã¾tÃ½rÃ½lacak dosya adÃ½
     script_path = os.path.join(ARCHIVE_DIR, script_name)
     
     if os.path.exists(script_path):
         try:
-            # Arka planda scripti çalýþtýr
+            # Arka planda scripti Ã§alÃ½Ã¾tÃ½r
             subprocess.Popen(["python", script_path])
-            return jsonify({"msg": f"{script_name} baþlatýldý."}), 200
+            return jsonify({"msg": f"{script_name} baÃ¾latÃ½ldÃ½."}), 200
         except Exception as e:
             return jsonify({"error": str(e)}), 500
-    return jsonify({"error": "Dosya bulunamadý"}), 404
+    return jsonify({"error": "Dosya bulunamadÃ½"}), 404
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
