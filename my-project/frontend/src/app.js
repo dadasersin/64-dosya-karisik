@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 function App() {
-  const [status, setStatus] = useState("Baðlanýyor...");
+  const [status, setStatus] = useState("BaÃ°lanÃ½yor...");
 
   const runProject = (name) => {
     fetch('/api/execute', {
@@ -17,26 +17,26 @@ function App() {
       <hr border="1px solid #222" />
       
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', marginTop: '30px' }}>
-        {/* Örnek Proje Kartlarý */}
+        {/* Ã–rnek Proje KartlarÃ½ */}
         <div style={cardStyle}>
           <h3>YouTube Bot v1</h3>
-          <button onClick={() => runProject('youtube_bot.py')} style={btnStyle}>ÇALIÞTIR</button>
+          <button onClick={() => runProject('youtube_bot.py')} style={btnStyle}>Ã‡ALIÃžTIR</button>
         </div>
 
         <div style={cardStyle}>
           <h3>Data Scraper</h3>
-          <button onClick={() => runProject('scraper.py')} style={btnStyle}>ÇALIÞTIR</button>
+          <button onClick={() => runProject('scraper.py')} style={btnStyle}>Ã‡ALIÃžTIR</button>
         </div>
 
         <div style={cardStyle}>
           <h3>Proxy Manager</h3>
-          <button onClick={() => runProject('proxy_check.py')} style={btnStyle}>ÇALIÞTIR</button>
+          <button onClick={() => runProject('proxy_check.py')} style={btnStyle}>Ã‡ALIÃžTIR</button>
         </div>
       </div>
 
       <div style={{ marginTop: '50px', color: '#888' }}>
-        <p>> Proje Arþivi: /projects_archive (4000+ Dosya Korunuyor)</p>
-        <p>> Durum: Sistemi Daðýtýma Hazýr</p>
+        <p>> Proje ArÃ¾ivi: /projects_archive (4000+ Dosya Korunuyor)</p>
+        <p>> Durum: Sistemi DaÃ°Ã½tÃ½ma HazÃ½r</p>
       </div>
     </div>
   );
