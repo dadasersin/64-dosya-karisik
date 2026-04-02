@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: main-portal-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PROJECT_ROOT
+        value: ./projects_archive
+
+  - type: web
+    name: main-portal-frontend
+    env: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/build
